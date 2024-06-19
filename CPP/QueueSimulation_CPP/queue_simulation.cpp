@@ -13,6 +13,11 @@ int main() {
     srand(time(0));
     cout << "사례 연구: 대기열에서의 제한된 평균 대기 시간을 맞추기 위해 \
                 요구되는 시간당 평균 방문인원 수\n";
+//decide target wait time
+    double target_wait_time;
+    cout << "목표 평균 대기 시간: ";
+    cin >> target_wait_time;
+//generate queue
     cout << "대기열의 길이: ";
     int qs;
     cin >> qs;
@@ -37,7 +42,7 @@ int main() {
     double perhour;                            
     double cust_per_min;
     double aver_wait_time = 0.0;               
-    for (perhour = 1 ; aver_wait_time < 1; perhour++) 
+    for (perhour = 1 ; aver_wait_time < target_wait_time; perhour++) 
     {    
         cust_per_min = perhour / (double)MIN_PER_HOUR;          //고객당 분. (고객)
 
@@ -83,7 +88,7 @@ int main() {
         cout << "-------------------------------\n";
         cout << "   평균 대기 시간: " << (double) line_wait / served << "분\n";
         cout << "-------------------------------\n";
-        cout << "   시간당 평균 고객 수 가" << perhour << "명이면 평균 대기 시간이 1분이 넘어갑니다.\n";
+        cout << "   시간당 평균 고객 수 가" << perhour << "명이면 평균 대기 시간이 " << target_wait_time << "이 넘어갑니다." << endl;
     }
     else
         cout << "고객이 한명도 없습니다!\n";
