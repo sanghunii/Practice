@@ -1,4 +1,4 @@
-##waiting line simulation program using queue
+<img width="500" alt="스크린샷 2024-06-19 오후 8 12 49" src="https://github.com/sanghunii/Practice/assets/152972679/2c9e99c8-22f7-4b5e-9974-262a29fc95e0">##waiting line simulation program using queue
 
 ##this program calculate return customer based on wating line length and number of customer per hour
 
@@ -13,3 +13,8 @@
 ##The simulation can be applied to any queue, including movie theater queues, restaurant queues, amusement park queues, etc.
 
 ##Through two different versions of the simulation program, we can see that the number of queues and the number of customers that can be received per hour with limited waiting time do not have a linear relationship. In other words, doubling the length of the queue does not mean that the number of customers you can receive doubles.
+
+##In queue_simulation.cpp, you can decide to 3 components
+  -> target average wait time
+  -> queue length
+  -> simulaiton time (Time unit is 1hour)
