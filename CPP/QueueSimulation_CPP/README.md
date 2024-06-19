@@ -15,6 +15,9 @@
 ##Through two different versions of the simulation program, we can see that the number of queues and the number of customers that can be received per hour with limited waiting time do not have a linear relationship. In other words, doubling the length of the queue does not mean that the number of customers you can receive doubles.
 
 ##In queue_simulation.cpp, you can decide to 3 components
-  -> target average wait time
-  -> queue length
-  -> simulaiton time (Time unit is 1hour)
+
+  1. target average wait time
+  
+  2.  queue length
+  
+  3.  simulaiton time (Time unit is 1hour)
