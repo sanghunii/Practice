@@ -22,7 +22,7 @@ int main() {
     int qs;
     cin >> qs;
     Queue line(qs);                                 //Queue대기열 생성.
-
+//decide to simulation time
     cout << "시뮬레이션 시간: ";
     int hours;
     cin >> hours;
