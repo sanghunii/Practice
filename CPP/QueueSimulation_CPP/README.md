@@ -1,6 +1,6 @@
-<img width="500" alt="스크린샷 2024-06-19 오후 8 12 49" src="https://github.com/sanghunii/Practice/assets/152972679/2c9e99c8-22f7-4b5e-9974-262a29fc95e0">##waiting line simulation program using queue
+##Queue simulation
 
-##this program calculate return customer based on wating line length and number of customer per hour
+##A program that calculates the average number of customers per hour needed to meet a certain average waiting time.
 
 ##<queue.h> is the queue interface header file for simulation, <queue.cpp> is the queue interface implementation file
 
