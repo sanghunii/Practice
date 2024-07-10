@@ -76,10 +76,10 @@ void POP(Stack * pstack)
 
     if (StackIsEmpty(pstack))
     {   
-        fpritnf(stderr, "Stack이 비어있습니다.\n");
+        fprintf(stderr, "Stack이 비어있습니다.\n");
         return;
     }
-    printf("%d\n", pstack->head);
+    printf("%d\n", pstack->head->item);
     temp = pstack->head;
     pstack->head = pstack->head->prev;
     free(temp);
@@ -240,6 +240,8 @@ static bool AddNode(Stack * pstack, Node * new_node)
         puts("첫번째 노드를 성공적으로 추가하였습니다.");
         pstack->head = new_node;
         pstack->size++;
+
+        return true;
     }
     else
     {
@@ -247,8 +249,11 @@ static bool AddNode(Stack * pstack, Node * new_node)
         pstack->head = new_node;                  //Stack의 recnet멤버가 new_node를 가리키도록 갱신
         pstack->size++;                             //Stack size 갱신
         puts("노드를 성공적으로 만들었습니다.");
+
+        return true;
     } 
-    
+
+    return false;
 }
 
 inline static void empty()
