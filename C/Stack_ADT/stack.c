@@ -30,7 +30,8 @@ void Initialize(Stack * pstack)             //초기화
 
 bool StackIsEmpty(const Stack * pstack)         //비어있는지
 {
-    return ((pstack->head == NULL && pstack->size == 0) ? true : false);
+    //return ((pstack->head == NULL && pstack->size == 0) ? true : false);
+    return ((pstack->size) == 0);
 }
 
 bool StackIsFull(const Stack * pstack)              //꽉찼는지
@@ -77,12 +78,21 @@ void POP(Stack * pstack)
     if (StackIsEmpty(pstack))
     {   
         fprintf(stderr, "Stack이 비어있습니다.\n");
-        return;
     }
-    printf("%d\n", pstack->head->item);
-    temp = pstack->head;
-    pstack->head = pstack->head->prev;
-    free(temp);
+    if (pstack->size == 1) {
+        printf("%d\n", pstack->head->item);
+
+        free(pstack->head);
+        pstack->size = 0;
+        Initialize(pstack);
+    }
+    else {
+        printf("%d\n", pstack->head->item);
+        temp = pstack->head;
+        pstack->head = pstack->head->prev;
+        free (temp);
+        pstack->size--;
+    }
 }
 
 
@@ -216,7 +226,6 @@ static Node * searching(const Stack * pstack, Item si)
         if (temp->item == si)
             break;
         else
-        
             temp = temp->prev;          //if - else문은 전체가 하나의 문장으로 카운트 된다.
 
     return temp;                    
