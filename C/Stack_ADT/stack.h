@@ -25,10 +25,11 @@
 
 /* 데이터형 정의 */     //필요에따라 Data type of Item을 수정해서 사용.
 typedef int Item;                       //Stack의 각 노드가 저장하는 정보(Item)의 데이터형. 구현하고자 하는 프로그램에 맞춰서 적절하게 데이터 타입을 변경해서 사용하면 됨.
+//아니면 union데이터형으로 구현하는 것도 괜찮을지도 ... ? 
 
 typedef struct node {                          //Stack을 구성하는 노드
     Item item;                                   //저장된정보
-    struct node * prev;                        //이전에 입력된 노드를 가리키는 포인터.
+    struct node * prev;                        //먼저 입력된 노드를 가리키는 포인터.
 } Node;                              
 
 typedef struct stack {                         //Stack
@@ -96,7 +97,7 @@ void ShowAll(const Stack * pstack);
 /* 사전 조건 : pnode는 스택의 recent멤버, 즉 첫번째 전달인자는 Stack의 가장 최근 노드의 주소  */
 /*           pfun은 Stack의 모든 항목에 적용할 함수, 함수 시그니쳐는 Traverse()프로토타입 선언에 따른다 */             
 /* 사후 조건 : pstack에 어떤 조작을 가한다. */
-void Traverse(Node * pnode, void (* pfun)(Item n));
+void Traverse(Node * pnode, void (* pfun)(Node * pnode));
 
 
 
