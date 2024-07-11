@@ -181,11 +181,11 @@ void ShowAll(const Stack * pstack)
     }
 }
 
-void Traverse(Node * pnode, void (* pfun)(Item n))
+void Traverse(Node * pnode, void (* pfun)(Node * pnode))
 {
     if (pnode->prev != NULL)
         Traverse(pnode->prev, pfun);
-    (*pfun)(pnode->item);                   //마찬가지로 recursion을 이용해서 맨처음 추가한 노드부터 함수 적용.
+    (*pfun)(pnode);                   //마찬가지로 recursion을 이용해서 맨처음 추가한 노드부터 함수 적용.
 }
 
 bool GetItem(Item * si)
@@ -216,7 +216,7 @@ static Node * findparent(const Stack * pstack, const Item si)
     
     while (parent->prev) {
         if (parent->prev->item == si) {
-            //parent = parent->prev;
+            //parent = parent->prev;            //Cuase of error
             break;
         }
         else {
