@@ -1,1 +1,1 @@
-##This repository is archive of practice codes of C/C++
+##This is archive of practice code of C/C++
