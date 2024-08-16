@@ -24,7 +24,6 @@ Complex Complex::operator*(const Complex & c) const {
 //conjugate
 Complex Complex::operator~() const {
     Complex temp;
-    temp.real = -real;
     temp.imaginary = -imaginary;
 
     return temp;
