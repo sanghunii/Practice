@@ -3,7 +3,7 @@
 
 
 List::List() {
-    items = new int[MAX];                        
+    items = new Item[MAX];                        
     ct = 0;                         //항목 갯수 0
     std::cout << "크기 " << MAX << "개 짜리 리스트 생성\n"
             << "현재 항목 수 : " << ct << std::endl;
@@ -42,7 +42,7 @@ bool List::List_add() {
     }
     else {
         cout << "Item입력 : ";
-        int temp_item;
+        Item temp_item;
         while(true) {
             if (cin >> temp_item)
             {
@@ -124,7 +124,7 @@ bool List::List_Search(const Item & i) const {
     return false;
 }
 
-void List::visit(void (*pf)(Item & i)) {
+void List::visit(void (*pf)(Item &)) {
     for (int count = 0; count < ct; count++)
         pf(items[count]);
 }
