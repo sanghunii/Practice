@@ -6,7 +6,7 @@ class Customer {
         long arrive;                                            //고객이 큐에 도착하는 시간
         int processtime;                                        //고객의 고래를 처리하는 시간
     public :
-        Customer() {arrive = processtime = 0;}
+        Customer() : arrive(0), processtime(0) {}
         void set(long when);                                    //setting value of Customer instance.
         long when() const {return arrive;}                      //해당 클래스 인스턴스(고객)의 도착 시간을 리턴
         int ptime() const  {return processtime;}                //해당 클래스 인스턴스(고객)의 업무 시간을 리턴
