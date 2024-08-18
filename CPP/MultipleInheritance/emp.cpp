@@ -20,12 +20,11 @@ void abstr_emp::ShowAll() const {
 }
 
 void abstr_emp::SetAll() {
-    using namespace std;
-    cout << "put the first name: ";
+    std::cout << "put the first name: ";
     getline(std::cin, fname);
-    cout << "put the last name: ";
+    std::cout << "put the last name: ";
     getline(std::cin, lname);
-    cout << "put the job: ";
+    std::cout << "put the job: ";
     getline(std::cin, job);
 }
 
