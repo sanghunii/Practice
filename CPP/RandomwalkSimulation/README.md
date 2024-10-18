@@ -1,4 +1,4 @@
-##Random Walk Simulateion
+#Random Walk Simulateion
 
 ##<vect.h> is the interface header file and <vect.cpp> is the interface implementation file.
 
