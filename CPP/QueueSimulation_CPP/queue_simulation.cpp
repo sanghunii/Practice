@@ -3,7 +3,7 @@
 #include <ctime>
 #include <cstdlib>
 
-const int MIN_PER_HOUR{60};
+const int MIN_PER_HOUR = 60;
 
 bool newcustomer(double x);
 
@@ -13,15 +13,20 @@ int main() {
     srand(time(0));
     cout << "사례 연구: 대기열에서의 제한된 평균 대기 시간을 맞추기 위해 \
                 요구되는 시간당 평균 방문인원 수\n";
+
 //decide target wait time
     double target_wait_time;
     cout << "목표 평균 대기 시간: ";
     cin >> target_wait_time;
+
+
 //generate queue
     cout << "대기열의 길이: ";
     int qs;
     cin >> qs;
     Queue line(qs);                                 //Queue대기열 생성.
+
+
 //decide to simulation time
     cout << "시뮬레이션 시간: ";
     int hours;
@@ -38,12 +43,13 @@ int main() {
     long line_wait = 0;
 
 
-//##Simulation 
+//##Queue Simulation - Simulate how many costomers visiting per minute
     double perhour;                            
     double cust_per_min;
     double aver_wait_time = 0.0;               
     for (perhour = 1 ; aver_wait_time < target_wait_time; perhour++) 
     {    
+        cout << perhour << "번째 루프 " << endl;
         cust_per_min = perhour / (double)MIN_PER_HOUR;          //고객당 분. (고객)
 
         turnaways = 0;
@@ -52,7 +58,9 @@ int main() {
         sum_line = 0;
         wait_time = 0;
         line_wait = 0;                                          //고객이 줄을 서서 대기한 누적시간.
-    //##inner Simulation.
+
+
+    //##Simulation.
         for (int cycle = 0; cycle < cyclelimit; cycle++)
         {
             if (newcustomer(cust_per_min))
